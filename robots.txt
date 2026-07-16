@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://abdalslamderhim.github.io/forsah/sitemap.xml
