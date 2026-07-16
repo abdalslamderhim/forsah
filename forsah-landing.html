@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>انضم إلى فرصة | منح دراسية ووظائف وهجرة موثوقة تصلك أول بأول</title>
+<meta name="description" content="سجّل مجانًا في فرصة (Forsah) واحصل على تنبيهات فورية بأحدث المنح الدراسية الممولة، الوظائف الحقيقية، وفرص الهجرة والتأشيرات — يثق بها أكثر من 190 ألف عضو.">
+<meta property="og:title" content="انضم إلى فرصة | منصتك للهجرة والمنح والوظائف">
+<meta property="og:description" content="تنبيهات فورية بأحدث الفرص الموثوقة، مجانًا بالكامل.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12202C; --ink-soft:#4A5A68;
+    --navy:#0B2A4A; --navy-2:#123A63; --navy-3:#0A2038;
+    --teal:#0E6B62; --teal-l:#12897C;
+    --gold:#CC9A3E; --gold-l:#E4B75E;
+    --bg:#F2F5F7; --card:#FFFFFF; --rule:#E1E6EA; --rule-2:#D6DCE1;
+    --shadow: 0 10px 30px -12px rgba(11,42,74,.18);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'IBM Plex Sans Arabic', sans-serif; background:var(--bg); color:var(--ink); line-height:1.7; overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Cairo', sans-serif;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .container{max-width:1180px; margin:0 auto; padding:0 24px;}
+  .visually-hidden{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+
+  /* fix: anchor targets were scrolling underneath the sticky header */
+  [id]{scroll-margin-top:88px;}
+
+  /* fix: gold eyebrow text failed contrast checks on light section backgrounds
+     (it only worked on the dark hero) — darken it everywhere except the hero */
+  section:not(.hero) .eyebrow{color:#9c7526;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-family:'Cairo'; font-weight:700; font-size:.72rem;
+    letter-spacing:.12em; color:var(--gold); background:rgba(204,154,62,.1);
+    padding:6px 14px; border-radius:100px; border:1px solid rgba(204,154,62,.3);
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .btn{font-family:'Cairo'; font-weight:700; font-size:.9rem; padding:13px 26px; border-radius:10px; border:none; cursor:pointer; transition:.2s; display:inline-flex; align-items:center; gap:8px;}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold)); color:var(--navy-3); box-shadow:0 10px 24px -8px rgba(204,154,62,.5);}
+  .btn-gold:hover{filter:brightness(1.07); transform:translateY(-2px);}
+  .btn-outline{background:transparent; border:1.5px solid rgba(255,255,255,.35); color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,.1);}
+  .login-link{font-family:'Cairo'; font-weight:700; font-size:.88rem; color:rgba(255,255,255,.85); padding:10px 6px; transition:.2s;}
+  .login-link:hover{color:var(--gold-l);}
+  @media (max-width:840px){ .login-link{display:none;} }
+
+  /* sticky mobile CTA bar */
+  .mobile-cta-bar{
+    display:none; position:fixed; bottom:0; inset-inline-start:0; inset-inline-end:0; z-index:300;
+    background:var(--navy-3); border-top:1px solid rgba(255,255,255,.1);
+    padding:12px 18px; align-items:center; justify-content:space-between; gap:12px;
+    box-shadow:0 -10px 26px rgba(0,0,0,.28);
+    transform:translateY(100%); transition:transform .3s ease;
+  }
+  .mobile-cta-bar.show{transform:translateY(0);}
+  .mobile-cta-bar span{color:#fff; font-family:'Cairo'; font-weight:700; font-size:.84rem;}
+  .mobile-cta-bar .btn{padding:9px 18px; font-size:.82rem;}
+  @media (max-width:760px){ .mobile-cta-bar{display:flex;} body{padding-bottom:60px;} }
+
+  /* -------- header -------- */
+  header{position:sticky; top:0; z-index:100; background:rgba(11,42,74,.97); backdrop-filter:blur(6px); color:#fff; border-bottom:1px solid rgba(255,255,255,.08);}
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 24px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:'Cairo'; font-weight:900; font-size:1.35rem;}
+  .logo .mark{width:36px;height:36px;border-radius:9px; background:linear-gradient(135deg,var(--gold),var(--gold-l)); display:flex;align-items:center;justify-content:center; color:var(--navy-3); font-weight:900;}
+  nav.main-nav{display:flex; gap:22px;}
+  nav.main-nav a{font-size:.9rem; font-weight:600; color:rgba(255,255,255,.8);}
+  nav.main-nav a:hover{color:#fff;}
+  @media (max-width:840px){ nav.main-nav{display:none;} }
+
+  /* -------- HERO -------- */
+  .hero{
+    background:
+      radial-gradient(1000px 460px at 20% -10%, rgba(204,154,62,.18), transparent 60%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 55%, var(--navy-3) 100%);
+    color:#fff; padding:80px 0 110px; text-align:center; position:relative;
+  }
+  .hero::after{content:""; position:absolute; inset:0; pointer-events:none; opacity:.5; background-image:repeating-linear-gradient(180deg, rgba(255,255,255,.025) 0 2px, transparent 2px 4px);}
+  .hero-inner{position:relative; max-width:740px; margin:0 auto;}
+  .hero h1{font-size:clamp(2rem,4.4vw,3.2rem); font-weight:900; line-height:1.3; margin:20px 0 18px;}
+  .hero h1 .accent{color:var(--gold-l);}
+  .hero p.lead{color:rgba(255,255,255,.78); font-size:1.08rem; max-width:560px; margin:0 auto 34px;}
+  .hero-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:44px;}
+  .hero-trust{display:flex; gap:34px; justify-content:center; flex-wrap:wrap;}
+  .hero-trust div strong{display:block; font-family:'Cairo'; font-size:1.5rem; font-weight:900; color:var(--gold-l);}
+  .hero-trust div span{font-size:.78rem; color:rgba(255,255,255,.6);}
+
+  /* passport stamp decoration in hero */
+  .stamp{
+    position:absolute; width:120px; height:120px; border:3px solid rgba(228,183,94,.35);
+    border-radius:50%; display:flex; align-items:center; justify-content:center; transform:rotate(-18deg);
+    font-family:'Cairo'; font-weight:900; font-size:.72rem; color:rgba(228,183,94,.5); letter-spacing:.05em; text-align:center;
+  }
+  .stamp.left{top:18px; inset-inline-start:2%;}
+  .stamp.right{bottom:0px; inset-inline-end:4%; transform:rotate(14deg);}
+  @media (max-width:900px){ .stamp{display:none;} }
+
+  section{padding:80px 0;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 46px;}
+  .section-head h2{font-size:1.9rem; font-weight:800; margin-top:14px;}
+  .section-head p{color:var(--ink-soft); margin-top:12px; font-size:.98rem;}
+
+  /* -------- FEATURES / المزايا -------- */
+  .features-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .feature-card{background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:28px; transition:.25s;}
+  .feature-card:hover{transform:translateY(-4px); box-shadow:var(--shadow); border-color:transparent;}
+  .feature-icon{width:54px;height:54px;border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:16px;}
+  .feature-card h3{font-size:1.08rem; font-weight:800; margin-bottom:8px;}
+  .feature-card p{font-size:.88rem; color:var(--ink-soft);}
+  @media (max-width:900px){ .features-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .features-grid{grid-template-columns:1fr;} }
+
+  /* -------- TESTIMONIALS as stamped passport cards -------- */
+  .section-alt{background:var(--card); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testi-card{
+    position:relative; background:linear-gradient(160deg,#fff,#F8FAFB); border:1px solid var(--rule);
+    border-radius:16px; padding:28px 24px 24px; overflow:hidden;
+  }
+  .testi-approved{
+    position:absolute; top:18px; inset-inline-end:18px; border:2px solid rgba(14,107,98,.35); color:var(--teal);
+    border-radius:8px; padding:3px 10px; font-family:'Cairo'; font-weight:800; font-size:.64rem; letter-spacing:.06em;
+    transform:rotate(-8deg); opacity:.75;
+  }
+  .testi-quote{font-size:.94rem; color:var(--ink); margin:10px 0 20px; line-height:1.8;}
+  .testi-person{display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px dashed var(--rule-2);}
+  .testi-avatar{width:42px;height:42px;border-radius:50%; background:var(--navy-2); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Cairo'; font-weight:800;}
+  .testi-name{font-weight:700; font-size:.9rem;}
+  .testi-role{font-size:.76rem; color:var(--ink-soft);}
+  @media (max-width:900px){ .testi-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .testi-grid{grid-template-columns:1fr;} }
+
+  /* -------- FAQ accordion -------- */
+  .faq-list{max-width:760px; margin:0 auto;}
+  .faq-item{background:var(--card); border:1px solid var(--rule); border-radius:12px; margin-bottom:12px; overflow:hidden;}
+  .faq-item summary{
+    list-style:none; cursor:pointer; padding:18px 22px; font-family:'Cairo'; font-weight:700; font-size:.98rem;
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+"; font-size:1.3rem; color:var(--gold); font-weight:900; transition:.25s; flex-shrink:0;
+  }
+  .faq-item[open] summary::after{content:"−";}
+  .faq-item[open] summary{border-bottom:1px dashed var(--rule-2);}
+  .faq-answer{padding:4px 22px 20px; font-size:.9rem; color:var(--ink-soft);}
+
+  /* -------- final CTA -------- */
+  .cta-band{
+    background:linear-gradient(120deg,var(--navy),var(--navy-2)); border-radius:24px; padding:60px 40px;
+    color:#fff; text-align:center; position:relative; overflow:hidden;
+  }
+  .cta-band::before{content:""; position:absolute; inset-inline-start:-70px; bottom:-70px; width:240px; height:240px; border-radius:50%; background:radial-gradient(circle, rgba(204,154,62,.22), transparent 70%);}
+  .cta-band h3{font-size:1.8rem; font-weight:900; margin-bottom:12px;}
+  .cta-band p{color:rgba(255,255,255,.75); max-width:520px; margin:0 auto 30px;}
+  .cta-form{display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
+  .cta-form input{padding:14px 18px; border-radius:10px; border:none; min-width:260px; font-family:inherit; font-size:.92rem;}
+  .cta-note{margin-top:16px; font-size:.78rem; color:rgba(255,255,255,.55);}
+
+  footer{background:var(--navy-3); color:rgba(255,255,255,.6); text-align:center; padding:34px 0; font-size:.82rem;}
+  footer a:hover{color:var(--gold-l);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap container">
+    <div class="logo"><div class="mark">ف</div> فرصة</div>
+    <nav class="main-nav">
+      <a href="#features">المزايا</a>
+      <a href="#testimonials">آراء المستخدمين</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+    </nav>
+    <a href="#" class="login-link">دخول</a>
+    <button class="btn btn-gold">إنشاء حساب</button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="stamp left">FORSAH<br>APPROVED</div>
+  <div class="stamp right">وصلت<br>بالسلامة</div>
+  <div class="container hero-inner">
+    <span class="eyebrow">أكثر من 190 ألف عضو يثقون بنا</span>
+    <h1>فرصتك القادمة<br><span class="accent">تبدأ من هنا.</span></h1>
+    <p class="lead">سجّل مجانًا واحصل على تنبيهات فورية بأحدث المنح الدراسية الممولة بالكامل، الوظائف الحقيقية في الخليج وأوروبا، وفرص الهجرة والتأشيرات — قبل أن تفوتك المواعيد النهائية.</p>
+    <div class="hero-ctas">
+      <button class="btn btn-gold">ابدأ مجانًا الآن ←</button>
+      <button class="btn btn-outline">شاهد كيف تعمل المنصة</button>
+    </div>
+    <div class="hero-trust">
+      <div><strong>2,430+</strong><span>فرصة نشطة</span></div>
+      <div><strong>68</strong><span>دولة مغطاة</span></div>
+      <div><strong>4.8★</strong><span>تقييم المستخدمين</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ المزايا ============ -->
+<section id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">🧭 لماذا فرصة؟</span>
+      <h2>كل ما تحتاجه لرحلتك، في مكان واحد</h2>
+      <p>لا مزيد من التنقل بين عشرات المواقع والمجموعات المتفرقة. صممنا فرصة لتوفّر عليك ساعات البحث وتمنحك معلومة موثوقة وقابلة للتنفيذ فورًا.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(204,154,62,.14); color:#9c7526;">⚡</div>
+        <h3>تنبيهات فورية</h3>
+        <p>إشعار مباشر فور نشر منحة أو وظيفة تطابق اهتماماتك، قبل أن تفوتك المواعيد النهائية.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(14,107,98,.1); color:var(--teal);">✅</div>
+        <h3>معلومات موثّقة</h3>
+        <p>فريقنا يراجع كل فرصة ومصدرها الرسمي قبل نشرها، فلا مجال للمعلومات المضللة.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(11,42,74,.08); color:var(--navy-2);">🧮</div>
+        <h3>أدوات مجانية</h3>
+        <p>حاسبة نقاط الهجرة، محول العملات، ودليل السفارات والجامعات، جاهزة دون أي رسوم.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(204,154,62,.14); color:#9c7526;">📄</div>
+        <h3>نماذج جاهزة</h3>
+        <p>قوالب سيرة ذاتية وخطابات دافع وتقديم، جاهزة للتعديل والتحميل مباشرة.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(14,107,98,.1); color:var(--teal);">🌐</div>
+        <h3>تغطية شاملة</h3>
+        <p>هجرة، منح، وظائف، وتأشيرات لأكثر من 68 دولة، محدّثة بشكل يومي.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(11,42,74,.08); color:var(--navy-2);">🤝</div>
+        <h3>مجتمع داعم</h3>
+        <p>تواصل مع أعضاء سبق أن هاجروا أو حصلوا على منح، وتعلّم من تجاربهم الحقيقية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ آراء العملاء ============ -->
+<section class="section-alt" id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">💬 قصص نجاح</span>
+      <h2>أعضاء وصلوا لفرصتهم عبر المنصة</h2>
+      <p>آراء حقيقية من مستخدمين استخدموا فرصة في رحلتهم للهجرة أو الدراسة أو العمل.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <span class="testi-approved">تم القبول ✓</span>
+        <p class="testi-quote">"تابعت تنبيهات فرصة يوميًا لمدة شهرين، وتقدمت لمنحة DAAD فور نشرها. اليوم أدرس الدكتوراه في ألمانيا."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">ف</div>
+          <div><div class="testi-name">فهد العتيبي</div><div class="testi-role">طالب دكتوراه، ألمانيا</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-approved">تم القبول ✓</span>
+        <p class="testi-quote">"حاسبة نقاط الهجرة ساعدتني أفهم وضعي بدقة قبل التقديم لإكسبرس إنتري. النتيجة: قبول خلال 6 أشهر."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">س</div>
+          <div><div class="testi-name">سارة الحموري</div><div class="testi-role">مقيمة دائمة، كندا</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-approved">تم القبول ✓</span>
+        <p class="testi-quote">"وجدت وظيفة عن بُعد من قسم الوظائف خلال أسبوع واحد فقط، والنماذج الجاهزة سهّلت عليّ كتابة سيرتي الذاتية."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">م</div>
+          <div><div class="testi-name">محمد الشريف</div><div class="testi-role">مطوّر برمجيات، عن بُعد</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ الأسئلة الشائعة ============ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">❓ أسئلة شائعة</span>
+      <h2>كل ما يدور في ذهنك عن فرصة</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>هل استخدام المنصة مجاني بالكامل؟</summary>
+        <div class="faq-answer">نعم، جميع الأخبار والمنح الدراسية والوظائف والأدوات الأساسية على فرصة مجانية تمامًا وستبقى كذلك. هناك عضوية مميزة اختيارية لمن يريد مزايا إضافية مثل التنبيهات المبكرة ومراجعة الملفات.</div>
+      </details>
+      <details class="faq-item">
+        <summary>كيف أحصل على تنبيهات بالفرص المناسبة لي فقط؟</summary>
+        <div class="faq-answer">بعد إنشاء حسابك مجانًا، اختر اهتماماتك (الدولة، نوع الفرصة، التخصص) وستصلك تنبيهات فورية عبر البريد الإلكتروني فور نشر أي فرصة تطابق اختياراتك — دون إزعاج أو رسائل غير ذات صلة.</div>
+      </details>
+      <details class="faq-item">
+        <summary>من أين تأتي معلومات المنح والوظائف؟ وهل هي موثوقة؟</summary>
+        <div class="faq-answer">يجمع فريقنا الفرص من مصادر رسمية مثل السفارات والجامعات ومنصات التوظيف الموثوقة، ويراجع كل فرصة قبل نشرها للتأكد من دقتها وصلاحيتها.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنني تحميل نماذج جاهزة للسيرة الذاتية وخطابات التقديم؟</summary>
+        <div class="faq-answer">نعم، يوفّر قسم النماذج قوالب احترافية جاهزة للتحميل والتعديل الفوري لسيرتك الذاتية وخطاب الدافع وخطاب التقديم، بصيغ سهلة الاستخدام.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل تتوفر خدمة دعم إذا كان لدي سؤال خاص بحالتي؟</summary>
+        <div class="faq-answer">بالتأكيد. يمكنك التواصل معنا في أي وقت عبر صفحة "اتصل بنا"، وأعضاء العضوية المميزة يحصلون إضافة إلى ذلك على استشارة أولية مباشرة مع فريقنا.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA النهائي ============ -->
+<section>
+  <div class="container">
+    <div class="cta-band">
+      <h3>لا تدع فرصتك القادمة تفوتك</h3>
+      <p>سجّل بريدك الآن واحصل مجانًا على قائمة بأحدث 10 فرص نشطة (منح، وظائف، وهجرة) مباشرة في صندوق الوارد خلال دقائق.</p>
+      <form class="cta-form" onsubmit="return false;">
+        <label for="cta-email" class="visually-hidden">بريدك الإلكتروني</label>
+        <input id="cta-email" type="email" required placeholder="بريدك الإلكتروني">
+        <button class="btn btn-gold" type="submit">انضم مجانًا الآن ←</button>
+      </form>
+      <div class="cta-note">بدون بطاقة ائتمان · إلغاء الاشتراك في أي وقت</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 فرصة Forsah · <a href="#">من نحن</a> · <a href="#">اتصل بنا</a> · <a href="#">سياسة الخصوصية</a>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar" id="mobileCtaBar">
+  <span>ابدأ رحلتك مجانًا اليوم</span>
+  <button class="btn btn-gold">إنشاء حساب</button>
+</div>
+
+<script>
+  const ctaBar = document.getElementById('mobileCtaBar');
+  const heroEl = document.getElementById('hero');
+  if ('IntersectionObserver' in window && heroEl) {
+    const io = new IntersectionObserver(([entry]) => {
+      ctaBar.classList.toggle('show', !entry.isIntersecting);
+    }, { threshold: 0 });
+    io.observe(heroEl);
+  }
+</script>
+
+</body>
+</html>
