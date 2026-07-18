@@ -309,7 +309,7 @@ margin-top:60px;
 
 <div class="search">
 
-<input type="text" placeholder="ابحث عن أي منحة أو وظيفة...">
+<input type="text" id="searchInput" placeholder="ابحث عن أي منحة أو وظيفة...">
 
 </div>
 
@@ -410,7 +410,35 @@ margin-top:60px;
 © 2026 Forsah جميع الحقوق محفوظة
 
 </footer>
+<script>
 
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function(){
+
+let value = this.value.toLowerCase();
+
+let posts = document.querySelectorAll(".post");
+
+posts.forEach(post=>{
+
+let text = post.innerText.toLowerCase();
+
+if(text.includes(value)){
+
+post.style.display="block";
+
+}else{
+
+post.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
 </body>
 
   </html>
