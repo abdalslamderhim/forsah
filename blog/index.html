@@ -1,117 +1,268 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مدونة فرصة | المنح الدراسية والهجرة والعمل</title>
+<title>المدونة | فرصة</title>
 
-<meta name="description" content="آخر أخبار المنح الدراسية والهجرة وفرص العمل والسفر حول العالم.">
+<meta name="description" content="آخر أخبار المنح الدراسية، الوظائف، الهجرة، التأشيرات والدورات المجانية.">
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://abdalslamderhim.github.io/forsah/blog/">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Cairo,sans-serif;
 }
 
 body{
+
+font-family:'Cairo',sans-serif;
+
 background:#f5f7fa;
+
+direction:rtl;
+
 color:#222;
+
 }
 
 header{
-background:#0b2a4a;
-color:#fff;
-padding:35px;
-text-align:center;
-}
 
-header h1{
-font-size:34px;
-}
+background:#0B2A4A;
 
-header p{
-margin-top:10px;
-opacity:.9;
+padding:20px;
+
+color:white;
+
 }
 
 .container{
+
 width:90%;
+
 max-width:1200px;
-margin:40px auto;
+
+margin:auto;
+
+}
+
+.logo{
+
+font-size:32px;
+
+font-weight:900;
+
+}
+
+.logo span{
+
+color:#D4AF37;
+
+}
+
+nav{
+
+margin-top:15px;
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.hero{
+
+background:white;
+
+padding:50px;
+
+margin:30px 0;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+margin-bottom:15px;
+
+color:#0B2A4A;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+color:#666;
+
 }
 
 .search{
-margin-bottom:30px;
+
+margin-top:30px;
+
 }
 
 .search input{
+
 width:100%;
-padding:15px;
-font-size:18px;
+
+padding:18px;
+
 border-radius:10px;
+
 border:1px solid #ddd;
+
+font-size:18px;
+
 }
 
-.grid{
+.section-title{
+
+font-size:30px;
+
+margin:40px 0 20px;
+
+color:#0B2A4A;
+
+}
+
+.posts{
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
 gap:25px;
+
 }
 
-.card{
-background:#fff;
+.post{
+
+background:white;
+
 border-radius:15px;
+
 overflow:hidden;
+
 box-shadow:0 5px 15px rgba(0,0,0,.08);
+
 transition:.3s;
+
 }
 
-.card:hover{
-transform:translateY(-5px);
+.post:hover{
+
+transform:translateY(-8px);
+
 }
 
-.card img{
+.post img{
+
 width:100%;
-height:200px;
+
+height:220px;
+
 object-fit:cover;
+
 }
 
-.card-content{
+.post-content{
+
 padding:20px;
+
 }
 
-.card h2{
-font-size:22px;
-margin-bottom:10px;
-}
+.category{
 
-.card p{
-line-height:1.8;
-color:#666;
-}
-
-.button{
 display:inline-block;
-margin-top:18px;
-background:#0b2a4a;
+
+background:#D4AF37;
+
+padding:6px 14px;
+
+border-radius:30px;
+
+font-size:14px;
+
+margin-bottom:15px;
+
+}
+
+.post h2{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+}
+
+.post p{
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+.read{
+
+display:inline-block;
+
+margin-top:20px;
+
+background:#0B2A4A;
+
 color:white;
+
 padding:10px 20px;
+
 border-radius:8px;
+
 text-decoration:none;
+
 }
 
 footer{
-margin-top:60px;
-padding:25px;
-background:#0b2a4a;
+
+background:#0B2A4A;
+
 color:white;
+
 text-align:center;
+
+padding:30px;
+
+margin-top:60px;
+
 }
+
 </style>
 
 </head>
@@ -119,32 +270,131 @@ text-align:center;
 <body>
 
 <header>
-<h1>مدونة فرصة</h1>
-<p>المنح الدراسية • الهجرة • السفر • فرص العمل</p>
-</header>
 
 <div class="container">
 
-<div class="search">
-<input type="text" placeholder="ابحث عن مقال...">
+<div class="logo">
+
+<span>F</span>orsah
+
 </div>
 
-<div class="grid">
+<nav>
 
-<div class="card">
+<a href="../index.html">الرئيسية</a>
 
-<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200" alt="منحة رومانيا">
+<a href="../about.html">من نحن</a>
 
-<div class="card-content">
+<a href="../contact.html">اتصل بنا</a>
 
-<h2>منحة الحكومة الرومانية 2026</h2>
+<a href="../privacy-policy.html">سياسة الخصوصية</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="container">
+
+<div class="hero">
+
+<h1>مدونة فرصة</h1>
 
 <p>
-دليل شامل حول شروط التقديم والمستندات المطلوبة وطريقة التسجيل خطوة بخطوة.
+
+أحدث المنح الدراسية والوظائف والهجرة والتأشيرات
+
 </p>
 
-<a class="button" href="romania-government-scholarship-2026.html">
-قراءة المقال
+<div class="search">
+
+<input type="text" id="searchInput" placeholder="ابحث عن أي منحة أو وظيفة...">
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+أحدث المقالات
+
+</h2>
+
+<div class="posts">
+
+<div class="post">
+
+<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200" alt="منحة الحكومة الرومانية">
+
+<div class="post-content">
+
+<span class="category">منح دراسية</span>
+
+<h2>منحة الحكومة الرومانية 2026 | ممولة بالكامل</h2>
+
+<p>
+
+تعرف على شروط التقديم، المزايا، المستندات المطلوبة، وكيفية التقديم على واحدة من أفضل المنح الدراسية في أوروبا.
+
+</p>
+
+<a class="read" href="romania-government-scholarship-2026.html">
+
+قراءة المقال →
+
+</a>
+
+</div>
+
+</div>
+
+<div class="post">
+
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200" alt="وظائف الخليج">
+
+<div class="post-content">
+
+<span class="category">وظائف</span>
+
+<h2>أفضل الوظائف في الخليج 2026</h2>
+
+<p>
+
+تعرف على أحدث الوظائف المتاحة في السعودية والإمارات وقطر وروابط التقديم الرسمية.
+
+</p>
+
+<a class="read" href="#">
+
+قريباً
+
+</a>
+
+</div>
+
+</div>
+
+<div class="post">
+
+<img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200" alt="الهجرة">
+
+<div class="post-content">
+
+<span class="category">الهجرة</span>
+
+<h2>دليل الهجرة إلى كندا 2026</h2>
+
+<p>
+
+شرح مبسط لبرامج الهجرة الكندية، الشروط، والخطوات الأساسية للتقديم.
+
+</p>
+
+<a class="read" href="#">
+
+قريباً
+
 </a>
 
 </div>
@@ -153,13 +403,42 @@ text-align:center;
 
 </div>
 
-</div>
+</section>
 
 <footer>
 
-© 2026 Forsah - جميع الحقوق محفوظة
+© 2026 Forsah جميع الحقوق محفوظة
 
 </footer>
+<script>
 
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function(){
+
+let value = this.value.toLowerCase();
+
+let posts = document.querySelectorAll(".post");
+
+posts.forEach(post=>{
+
+let text = post.innerText.toLowerCase();
+
+if(text.includes(value)){
+
+post.style.display="block";
+
+}else{
+
+post.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
 </body>
-  </html>
+
+                                                 </html>
