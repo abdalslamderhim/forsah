@@ -60,5 +60,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
+  <url>
+    <loc>https://abdalslamderhim.github.io/forsah/blog/romania-government-scholarship.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://abdalslamderhim.github.io/forsah/blog/turkiye-scholarship-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
 
 </urlset>
