@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-27EBS5NMEH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-27EBS5NMEH');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>فرصة | منح دراسية ممولة، وظائف، هجرة وتأشيرات 2026</title>
-
 <meta name="description" content="منصة فرصة العربية لمتابعة أحدث المنح الدراسية الممولة بالكامل، الوظائف في الخليج وأوروبا، فرص العمل عن بعد، والهجرة والتأشيرات لأكثر من 68 دولة، مع تحديثات يومية.">
-
 <meta name="keywords" content="منح دراسية, منح ممولة بالكامل, وظائف, وظائف الخليج, وظائف أوروبا, العمل عن بعد, هجرة كندا, هجرة ألمانيا, تأشيرة عمل, تأشيرة دراسة, الهجرة 2026">
-
 <meta name="author" content="Forsah">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
@@ -41,29 +29,71 @@
 
 <link rel="icon" href="favicon.ico">
 
+<!-- Performance: connect early, load CSS with high priority, defer non-critical JS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
+<!-- Schema.org: WebSite -->
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"WebSite",
-"name":"Forsah",
-"url":"https://abdalslamderhim.github.io/forsah/",
-"description":"منصة عربية للمنح الدراسية والهجرة والوظائف.",
-"potentialAction":{
-"@type":"SearchAction",
-"target":"https://abdalslamderhim.github.io/forsah/?q={search_term_string}",
-"query-input":"required name=search_term_string"
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Forsah",
+  "url":"https://abdalslamderhim.github.io/forsah/",
+  "inLanguage":"ar",
+  "description":"منصة عربية للمنح الدراسية والهجرة والوظائف.",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://abdalslamderhim.github.io/forsah/?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
 }
+</script>
+
+<!-- Schema.org: Organization + Logo -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Forsah",
+  "alternateName":"فرصة",
+  "url":"https://abdalslamderhim.github.io/forsah/",
+  "logo":"https://abdalslamderhim.github.io/forsah/og-image.jpg",
+  "sameAs":[]
 }
-  </script>
+</script>
+
+<!-- Schema.org: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"الرئيسية",
+      "item":"https://abdalslamderhim.github.io/forsah/"
+    }
+  ]
+}
+</script>
+
+<!-- Google tag (gtag.js) — deferred, non-blocking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-27EBS5NMEH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-27EBS5NMEH');
+</script>
 </head>
 <body>
 
-<header>
+<header id="siteHeader">
   <div class="nav-wrap container">
     <div class="logo">
       <div class="mark">ف</div>
@@ -71,30 +101,21 @@
         <small>FORSAH — بوابة الهجرة والفرص</small>
       </div>
     </div>
-<nav class="main-nav">
-
-<a href="index.html">الرئيسية</a>
-
-<a href="blog/">المدونة</a>
-
-<a href="scholarships.html">المنح</a>
-
-<a href="jobs.html">الوظائف</a>
-
-<a href="immigration.html">الهجرة</a>
-
-<a href="visas.html">التأشيرات</a>
-
-<a href="about.html">من نحن</a>
-
-<a href="contact.html">اتصل بنا</a>
-
-</nav>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">الرئيسية</a>
+      <a href="blog/">المدونة</a>
+      <a href="scholarships.html">المنح</a>
+      <a href="jobs.html">الوظائف</a>
+      <a href="immigration.html">الهجرة</a>
+      <a href="visas.html">التأشيرات</a>
+      <a href="about.html">من نحن</a>
+      <a href="contact.html">اتصل بنا</a>
+    </nav>
     <div class="header-actions">
-      <button class="btn btn-ghost" aria-label="بحث">🔍</button>
+      <button class="btn btn-ghost" id="searchToggle" aria-label="بحث">🔍</button>
       <a href="#" class="login-link">دخول</a>
       <button class="btn btn-gold">إنشاء حساب</button>
-      <button class="burger" aria-expanded="false" aria-label="فتح القائمة">☰</button>
+      <button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="mainNav" aria-label="فتح القائمة">☰</button>
     </div>
   </div>
 </header>
@@ -107,43 +128,43 @@
       <h1>فرصتك القادمة<br><span class="accent">لن تنتظرك طويلًا.</span></h1>
       <p class="lead">آلاف المنح الدراسية الممولة بالكامل، وظائف حقيقية في الخليج وأوروبا والعمل عن بُعد، ومسارات هجرة موثّقة لكندا وألمانيا وأستراليا — نجمعها ونحدّثها يوميًا لتصلك أول بأول، بدل أن تبحث عنها بنفسك في عشرات المواقع.</p>
 
-      <div class="search-panel">
+      <form class="search-panel" id="opportunitySearch">
         <div class="search-row">
           <div class="search-field">
             <label for="opp-type">نوع الفرصة</label>
             <select id="opp-type">
-              <option>كل الفرص</option>
-              <option>هجرة</option>
-              <option>منحة دراسية</option>
-              <option>وظيفة</option>
-              <option>تأشيرة</option>
+              <option value="all">كل الفرص</option>
+              <option value="scholar">منحة دراسية</option>
+              <option value="job">وظيفة</option>
+              <option value="news">هجرة</option>
             </select>
           </div>
           <div class="search-field">
             <label for="opp-dest">الوجهة</label>
             <select id="opp-dest">
-              <option>كل الدول</option>
-              <option>كندا</option>
-              <option>ألمانيا</option>
-              <option>بريطانيا</option>
-              <option>أستراليا</option>
-              <option>الولايات المتحدة</option>
-              <option>دول الخليج</option>
+              <option value="">كل الدول</option>
+              <option value="كندا">كندا</option>
+              <option value="ألمانيا">ألمانيا</option>
+              <option value="بريطانيا">بريطانيا</option>
+              <option value="أستراليا">أستراليا</option>
+              <option value="الولايات المتحدة">الولايات المتحدة</option>
+              <option value="الإمارات">دول الخليج</option>
             </select>
           </div>
           <div class="search-field" style="flex:1.4 1 200px;">
             <label for="opp-keyword">كلمة مفتاحية</label>
             <input id="opp-keyword" type="text" placeholder="مثال: ماجستير، مبرمج، تأشيرة عمل...">
           </div>
-          <button class="search-btn">ابحث عن فرصتك ←</button>
+          <button class="search-btn" type="submit">ابحث عن فرصتك ←</button>
         </div>
         <div class="search-tags">
-          <span>منح دراسية ممولة بالكامل</span>
-          <span>وظائف عن بُعد 2026</span>
-          <span>هجرة كندا Express Entry</span>
-          <span>تأشيرة شنغن للسياحة</span>
+          <span data-tag="منح دراسية ممولة بالكامل">منح دراسية ممولة بالكامل</span>
+          <span data-tag="وظائف عن بُعد">وظائف عن بُعد 2026</span>
+          <span data-tag="هجرة كندا">هجرة كندا Express Entry</span>
+          <span data-tag="تأشيرة شنغن">تأشيرة شنغن للسياحة</span>
         </div>
-      </div>
+        <p id="search-status" role="status" aria-live="polite"></p>
+      </form>
 
       <div class="hero-stats">
         <div><strong>2,430+</strong><span>فرصة نشطة الآن</span></div>
@@ -172,10 +193,10 @@
       <div><span class="eyebrow">📰 آخر تحديثات</span><h2>أحدث أخبار الهجرة</h2>
         <p>تعديلات الأنظمة والقوانين قد تغيّر مصير طلبك خلال أيام. نرصد ونشرح لك كل جديد في سياسات الهجرة لكندا وألمانيا وبريطانيا وأستراليا فور صدوره.</p>
       </div>
-      <a class="see-all" href="#">عرض كل الأخبار ←</a>
+      <a class="see-all" href="blog/">عرض كل الأخبار ←</a>
     </div>
-    <div class="grid-3">
-      <article class="stub">
+    <div class="grid-3" data-group="news">
+      <article class="stub reveal">
         <span class="stub-notch-b"></span>
         <div class="stub-code">FR-NEWS-01</div>
         <div class="stub-body">
@@ -185,7 +206,7 @@
           <div class="item-meta"><span>🗓️ منذ يومين</span><span>⏱️ 4 دقائق قراءة</span></div>
         </div>
       </article>
-      <article class="stub">
+      <article class="stub reveal">
         <span class="stub-notch-b"></span>
         <div class="stub-code">FR-NEWS-02</div>
         <div class="stub-body">
@@ -195,7 +216,7 @@
           <div class="item-meta"><span>🗓️ منذ 3 أيام</span><span>⏱️ 5 دقائق قراءة</span></div>
         </div>
       </article>
-      <article class="stub">
+      <article class="stub reveal">
         <span class="stub-notch-b"></span>
         <div class="stub-code">FR-NEWS-03</div>
         <div class="stub-body">
@@ -206,6 +227,7 @@
         </div>
       </article>
     </div>
+    <p class="empty-state" data-empty-for="news">لا توجد أخبار مطابقة لبحثك حاليًا.</p>
   </div>
 </section>
 
@@ -216,10 +238,10 @@
       <div><span class="eyebrow">🎓 تعليم بلا حدود</span><h2>أحدث المنح الدراسية</h2>
         <p>منح بكالوريوس وماجستير ودكتوراه ممولة بالكامل في أعرق الجامعات العالمية — نراجع كل منحة ومصدرها الرسمي قبل نشرها لك.</p>
       </div>
-      <a class="see-all" href="#">عرض كل المنح ←</a>
+      <a class="see-all" href="scholarships.html">عرض كل المنح ←</a>
     </div>
-    <div class="grid-3">
-      <article class="stub">
+    <div class="grid-3" data-group="scholar">
+      <article class="stub reveal">
         <span class="stub-notch-b"></span>
         <span class="deadline-badge">⏳ يتبقى 12 يومًا</span>
         <div class="stub-code">FR-SCH-14</div>
@@ -230,7 +252,7 @@
           <div class="item-meta"><span>📍 بريطانيا</span><span>⏳ التسجيل حتى نوفمبر</span></div>
         </div>
       </article>
-      <article class="stub">
+      <article class="stub reveal">
         <span class="stub-notch-b"></span>
         <span class="deadline-badge">⏳ يتبقى 45 يومًا</span>
         <div class="stub-code">FR-SCH-15</div>
@@ -241,7 +263,7 @@
           <div class="item-meta"><span>📍 ألمانيا</span><span>⏳ على مدار السنة</span></div>
         </div>
       </article>
-      <article class="stub">
+      <article class="stub reveal">
         <span class="stub-notch-b"></span>
         <span class="deadline-badge neutral">🔔 يفتح قريبًا</span>
         <div class="stub-code">FR-SCH-16</div>
@@ -253,6 +275,7 @@
         </div>
       </article>
     </div>
+    <p class="empty-state" data-empty-for="scholar">لا توجد منح مطابقة لبحثك حاليًا.</p>
     <div style="margin-top:20px;">
       <div class="ad-slot">مساحة إعلانية · Google AdSense</div>
     </div>
@@ -266,31 +289,31 @@
       <div><span class="eyebrow">💼 سوق العمل</span><h2>أحدث الوظائف</h2>
         <p>وظائف حقيقية بعقود موثّقة في الخليج وأوروبا، بالإضافة إلى فرص عمل عن بُعد وعمل موسمي تناسب مختلف المهارات والمؤهلات.</p>
       </div>
-      <a class="see-all" href="#">عرض كل الوظائف ←</a>
+      <a class="see-all" href="jobs.html">عرض كل الوظائف ←</a>
     </div>
-    <div class="grid-4">
-      <article class="stub"><span class="stub-notch-b"></span><span class="deadline-badge">⏳ 3 أيام</span><div class="stub-code">FR-JOB-21</div>
+    <div class="grid-4" data-group="job">
+      <article class="stub reveal"><span class="stub-notch-b"></span><span class="deadline-badge">⏳ 3 أيام</span><div class="stub-code">FR-JOB-21</div>
         <div class="stub-body"><span class="item-tag tag-job">عن بُعد</span>
           <h3 class="item-title" style="font-size:.95rem">مطوّر واجهات أمامية</h3>
           <p style="font-size:.8rem;color:var(--ink-soft)">شركة تقنية أوروبية · دوام كامل</p>
           <div class="item-meta"><span>💶 3200€</span></div>
         </div>
       </article>
-      <article class="stub"><span class="stub-notch-b"></span><span class="deadline-badge">⏳ 7 أيام</span><div class="stub-code">FR-JOB-22</div>
+      <article class="stub reveal"><span class="stub-notch-b"></span><span class="deadline-badge">⏳ 7 أيام</span><div class="stub-code">FR-JOB-22</div>
         <div class="stub-body"><span class="item-tag tag-job">الخليج</span>
           <h3 class="item-title" style="font-size:.95rem">مهندس مدني</h3>
           <p style="font-size:.8rem;color:var(--ink-soft)">مشروع إنشائي كبير · الإمارات</p>
           <div class="item-meta"><span>💰 12,000 د.إ</span></div>
         </div>
       </article>
-      <article class="stub"><span class="stub-notch-b"></span><span class="deadline-badge">⏳ 10 أيام</span><div class="stub-code">FR-JOB-23</div>
+      <article class="stub reveal"><span class="stub-notch-b"></span><span class="deadline-badge">⏳ 10 أيام</span><div class="stub-code">FR-JOB-23</div>
         <div class="stub-body"><span class="item-tag tag-job">موسمي</span>
           <h3 class="item-title" style="font-size:.95rem">عامل مزارع الفراولة</h3>
           <p style="font-size:.8rem;color:var(--ink-soft)">برنامج العمل الموسمي · ألمانيا</p>
           <div class="item-meta"><span>💶 11€/ساعة</span></div>
         </div>
       </article>
-      <article class="stub"><span class="stub-notch-b"></span><span class="deadline-badge">⏳ 5 أيام</span><div class="stub-code">FR-JOB-24</div>
+      <article class="stub reveal"><span class="stub-notch-b"></span><span class="deadline-badge">⏳ 5 أيام</span><div class="stub-code">FR-JOB-24</div>
         <div class="stub-body"><span class="item-tag tag-job">أوروبا</span>
           <h3 class="item-title" style="font-size:.95rem">ممرض مسجّل</h3>
           <p style="font-size:.8rem;color:var(--ink-soft)">مستشفى حكومي · هولندا</p>
@@ -298,6 +321,7 @@
         </div>
       </article>
     </div>
+    <p class="empty-state" data-empty-for="job">لا توجد وظائف مطابقة لبحثك حاليًا.</p>
   </div>
 </section>
 
@@ -308,15 +332,15 @@
       <div><span class="eyebrow">✈️ دليل التأشيرات</span><h2>التأشيرات حسب الدولة</h2>
         <p>شروط ومستندات وخطوات التقديم لتأشيرات السياحة والعمل والدراسة والزيارة، موضّحة بشكل مبسّط لكل دولة.</p>
       </div>
-      <a class="see-all" href="#">دليل كل الدول ←</a>
+      <a class="see-all" href="visas.html">دليل كل الدول ←</a>
     </div>
     <div class="grid-6">
-      <div class="visa-card"><div class="visa-flag">🇨🇦</div><h4>كندا</h4><p>عمل، دراسة، زيارة</p></div>
-      <div class="visa-card"><div class="visa-flag">🇩🇪</div><h4>ألمانيا</h4><p>شنغن، بحث عن عمل</p></div>
-      <div class="visa-card"><div class="visa-flag">🇬🇧</div><h4>بريطانيا</h4><p>عامل ماهر، طالب</p></div>
-      <div class="visa-card"><div class="visa-flag">🇦🇺</div><h4>أستراليا</h4><p>مهارات، دراسة</p></div>
-      <div class="visa-card"><div class="visa-flag">🇺🇸</div><h4>أمريكا</h4><p>B1/B2، طالب F1</p></div>
-      <div class="visa-card"><div class="visa-flag">🇶🇦</div><h4>قطر</h4><p>عمل، زيارة عائلية</p></div>
+      <div class="visa-card reveal"><div class="visa-flag">🇨🇦</div><h4>كندا</h4><p>عمل، دراسة، زيارة</p></div>
+      <div class="visa-card reveal"><div class="visa-flag">🇩🇪</div><h4>ألمانيا</h4><p>شنغن، بحث عن عمل</p></div>
+      <div class="visa-card reveal"><div class="visa-flag">🇬🇧</div><h4>بريطانيا</h4><p>عامل ماهر، طالب</p></div>
+      <div class="visa-card reveal"><div class="visa-flag">🇦🇺</div><h4>أستراليا</h4><p>مهارات، دراسة</p></div>
+      <div class="visa-card reveal"><div class="visa-flag">🇺🇸</div><h4>أمريكا</h4><p>B1/B2، طالب F1</p></div>
+      <div class="visa-card reveal"><div class="visa-flag">🇶🇦</div><h4>قطر</h4><p>عمل، زيارة عائلية</p></div>
     </div>
   </div>
 </section>
@@ -329,7 +353,7 @@
     </div>
     <div class="grid-3" style="row-gap:22px;">
 
-      <div class="cat-card" id="immigration">
+      <div class="cat-card reveal" id="immigration">
         <div class="cat-icon" style="background:rgba(11,42,74,.08); color:var(--navy-2);">🌍</div>
         <h3>الهجرة</h3>
         <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:12px;">دليلك الكامل لشروط وخطوات الهجرة إلى أبرز الوجهات العالمية.</p>
@@ -343,7 +367,7 @@
         </ul>
       </div>
 
-      <div class="cat-card">
+      <div class="cat-card reveal">
         <div class="cat-icon" style="background:rgba(14,107,98,.1); color:var(--teal);">🎓</div>
         <h3>المنح الدراسية</h3>
         <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:12px;">منح ممولة بالكامل لجميع المراحل الجامعية في أفضل الجامعات العالمية.</p>
@@ -355,7 +379,7 @@
         </ul>
       </div>
 
-      <div class="cat-card">
+      <div class="cat-card reveal">
         <div class="cat-icon" style="background:rgba(204,154,62,.14); color:#9c7526;">💼</div>
         <h3>الوظائف</h3>
         <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:12px;">فرص عمل موثّقة في الخليج وأوروبا، بالإضافة إلى وظائف عن بُعد وعمل موسمي.</p>
@@ -367,7 +391,7 @@
         </ul>
       </div>
 
-      <div class="cat-card">
+      <div class="cat-card reveal">
         <div class="cat-icon" style="background:rgba(193,80,46,.1); color:#B1502E;">✈️</div>
         <h3>التأشيرات</h3>
         <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:12px;">شروط ومستندات التأشيرات مبسّطة حسب الدولة ونوع الغرض من السفر.</p>
@@ -379,7 +403,7 @@
         </ul>
       </div>
 
-      <div class="cat-card" id="forms">
+      <div class="cat-card reveal" id="forms">
         <div class="cat-icon" style="background:rgba(11,42,74,.08); color:var(--navy-2);">📄</div>
         <h3>النماذج</h3>
         <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:12px;">قوالب سيرة ذاتية وخطابات جاهزة للتحميل والتعديل الفوري.</p>
@@ -391,7 +415,7 @@
         </ul>
       </div>
 
-      <div class="cat-card">
+      <div class="cat-card reveal">
         <div class="cat-icon" style="background:rgba(14,107,98,.1); color:var(--teal);">📰</div>
         <h3>الأخبار</h3>
         <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:12px;">آخر تطورات قوانين الهجرة والسفارات فور صدورها.</p>
@@ -415,12 +439,12 @@
       </div>
     </div>
     <div class="grid-6">
-      <div class="tool-card"><div class="tool-icon">🧮</div><h4>حاسبة نقاط الهجرة</h4><p>احسب نقاطك لأنظمة الهجرة الكندية والأسترالية</p></div>
-      <div class="tool-card"><div class="tool-icon">🧳</div><h4>حاسبة تكلفة السفر</h4><p>قدّر تكلفة معيشتك ودراستك في أي وجهة</p></div>
-      <div class="tool-card"><div class="tool-icon">💱</div><h4>محول العملات</h4><p>حوّل بين العملات بأسعار محدثة لحظيًا</p></div>
-      <div class="tool-card"><div class="tool-icon">🏛️</div><h4>دليل السفارات</h4><p>عناوين ومواعيد السفارات والقنصليات</p></div>
-      <div class="tool-card"><div class="tool-icon">🎓</div><h4>دليل الجامعات</h4><p>قارن بين الجامعات حسب التخصص والتكلفة</p></div>
-      <div class="tool-card"><div class="tool-icon">📋</div><h4>قائمة الأوراق المطلوبة</h4><p>تحقق من مستنداتك قبل التقديم</p></div>
+      <div class="tool-card reveal"><div class="tool-icon">🧮</div><h4>حاسبة نقاط الهجرة</h4><p>احسب نقاطك لأنظمة الهجرة الكندية والأسترالية</p></div>
+      <div class="tool-card reveal"><div class="tool-icon">🧳</div><h4>حاسبة تكلفة السفر</h4><p>قدّر تكلفة معيشتك ودراستك في أي وجهة</p></div>
+      <div class="tool-card reveal"><div class="tool-icon">💱</div><h4>محول العملات</h4><p>حوّل بين العملات بأسعار محدثة لحظيًا</p></div>
+      <div class="tool-card reveal"><div class="tool-icon">🏛️</div><h4>دليل السفارات</h4><p>عناوين ومواعيد السفارات والقنصليات</p></div>
+      <div class="tool-card reveal"><div class="tool-icon">🎓</div><h4>دليل الجامعات</h4><p>قارن بين الجامعات حسب التخصص والتكلفة</p></div>
+      <div class="tool-card reveal"><div class="tool-icon">📋</div><h4>قائمة الأوراق المطلوبة</h4><p>تحقق من مستنداتك قبل التقديم</p></div>
     </div>
   </div>
 </section>
@@ -441,11 +465,12 @@
         <h3>لا تفوّت فرصتك القادمة</h3>
         <p>انضم لأكثر من 190 ألف مشترك يستلمون أسبوعيًا أحدث المنح الممولة والوظائف الحقيقية وتحديثات الهجرة والتأشيرات — مباشرة في بريدهم، بدون رسائل مزعجة وبإمكانية الإلغاء في أي وقت.</p>
       </div>
-      <form class="newsletter-form" onsubmit="return false;">
+      <form class="newsletter-form" id="newsletterForm" novalidate>
         <label for="newsletter-email" class="visually-hidden">بريدك الإلكتروني</label>
         <input id="newsletter-email" type="email" required placeholder="بريدك الإلكتروني">
         <button class="btn btn-gold" type="submit">اشترك الآن</button>
       </form>
+      <p class="newsletter-note" id="newsletterNote" role="status" aria-live="polite"></p>
     </div>
   </div>
 </section>
@@ -460,32 +485,32 @@
       </div>
       <p style="font-size:.86rem; max-width:280px; color:rgba(255,255,255,.55);">فرصة (Forsah) منصة عربية مستقلة تجمع أحدث فرص الهجرة والمنح الدراسية الممولة والوظائف والتأشيرات في مكان واحد موثوق، لمساعدتك على اتخاذ خطوتك القادمة بثقة ووضوح.</p>
       <div class="social" style="margin-top:18px;">
-        <a href="#">📘</a><a href="#">📸</a><a href="#">🐦</a><a href="#">▶️</a>
+        <a href="#" aria-label="فيسبوك">📘</a><a href="#" aria-label="إنستغرام">📸</a><a href="#" aria-label="تويتر">🐦</a><a href="#" aria-label="يوتيوب">▶️</a>
       </div>
     </div>
     <div>
       <h5>الهجرة</h5>
-      <ul><li><a href="#">كندا</a></li><li><a href="#">ألمانيا</a></li><li><a href="#">بريطانيا</a></li><li><a href="#">أستراليا</a></li></ul>
+      <ul><li><a href="#immigration">كندا</a></li><li><a href="#immigration">ألمانيا</a></li><li><a href="#immigration">بريطانيا</a></li><li><a href="#immigration">أستراليا</a></li></ul>
     </div>
     <div>
       <h5>المنح والوظائف</h5>
-      <ul><li><a href="#">منح ممولة بالكامل</a></li><li><a href="#">وظائف عن بُعد</a></li><li><a href="#">العمل الموسمي</a></li></ul>
+      <ul><li><a href="scholarships.html">منح ممولة بالكامل</a></li><li><a href="jobs.html">وظائف عن بُعد</a></li><li><a href="jobs.html">العمل الموسمي</a></li></ul>
     </div>
     <div>
       <h5>الأدوات</h5>
-      <ul><li><a href="#">حاسبة نقاط الهجرة</a></li><li><a href="#">دليل السفارات</a></li><li><a href="#">دليل الجامعات</a></li></ul>
+      <ul><li><a href="#tools">حاسبة نقاط الهجرة</a></li><li><a href="#tools">دليل السفارات</a></li><li><a href="#tools">دليل الجامعات</a></li></ul>
     </div>
     <div>
       <h5>عن فرصة</h5>
-      <ul><li><a href="#">من نحن</a></li><li><a href="#">اتصل بنا</a></li><li><a href="#">عضوية مدفوعة</a></li></ul>
+      <ul><li><a href="about.html">من نحن</a></li><li><a href="contact.html">اتصل بنا</a></li><li><a href="#">عضوية مدفوعة</a></li></ul>
     </div>
   </div>
   <div class="container footer-bottom">
     <span>© 2026 فرصة Forsah. جميع الحقوق محفوظة.</span>
     <div class="footer-legal">
-      <a href="#">سياسة الخصوصية</a>
-      <a href="#">شروط الاستخدام</a>
-      <a href="#">إخلاء المسؤولية</a>
+      <a href="privacy-policy.html">سياسة الخصوصية</a>
+      <a href="terms.html">شروط الاستخدام</a>
+      <a href="disclaimer.html">إخلاء المسؤولية</a>
     </div>
   </div>
 </footer>
@@ -495,7 +520,13 @@
   <button class="btn btn-gold">إنشاء حساب</button>
 </div>
 
+<button id="backToTop" aria-label="العودة للأعلى" title="العودة للأعلى">↑</button>
+
 <script>
+(function(){
+  "use strict";
+
+  /* ---------- Split-flap board ---------- */
   const boardData = [
     {code:"CA", dest:"كندا — إكسبرس إنتري", sub:"سحب جديد اليوم", count:"+120 دعوة"},
     {code:"DE", dest:"ألمانيا — بطاقة الفرصة", sub:"مهن مؤهلة موسّعة", count:"+340 وظيفة"},
@@ -518,31 +549,119 @@
     `).join('');
   }
   renderBoard();
-  // gentle periodic shuffle to emulate a live split-flap board
-  // paused while the tab is hidden to save CPU/battery on inactive tabs
   setInterval(() => {
     if (document.hidden) return;
     boardData.push(boardData.shift());
     renderBoard();
   }, 4200);
 
-  // mobile burger -> toggle simple nav overlay
-  document.querySelector('.burger').addEventListener('click', (e) => {
-    const nav = document.querySelector('.main-nav');
-    const isOpen = nav.style.display === 'flex';
-    nav.style.display = isOpen ? 'none' : 'flex';
-    e.currentTarget.setAttribute('aria-expanded', String(!isOpen));
-    nav.style.position = 'absolute';
-    nav.style.top = '64px';
-    nav.style.insetInlineStart = '0';
-    nav.style.insetInlineEnd = '0';
-    nav.style.background = 'var(--navy)';
-    nav.style.flexDirection = 'column';
-    nav.style.padding = '10px 20px 20px';
+  /* ---------- Mobile nav toggle (classList.toggle) ---------- */
+  const burger = document.getElementById('burgerBtn');
+  const nav = document.getElementById('mainNav');
+  burger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.textContent = isOpen ? '✕' : '☰';
+  });
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.textContent = '☰';
+    });
   });
 
-  // reveal sticky mobile CTA bar once the hero scrolls out of view
-  // IntersectionObserver avoids the per-frame cost of a scroll event listener
+  /* ---------- Sticky header shadow ---------- */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 10);
+  }, { passive:true });
+
+  /* ---------- Opportunity search / filter ---------- */
+  const form = document.getElementById('opportunitySearch');
+  const typeSelect = document.getElementById('opp-type');
+  const destSelect = document.getElementById('opp-dest');
+  const keywordInput = document.getElementById('opp-keyword');
+  const statusEl = document.getElementById('search-status');
+  const groups = document.querySelectorAll('[data-group]');
+
+  function runSearch(){
+    const type = typeSelect.value;
+    const dest = destSelect.value.trim();
+    const keyword = keywordInput.value.trim().toLowerCase();
+    let totalMatches = 0;
+
+    groups.forEach(group => {
+      const groupType = group.getAttribute('data-group');
+      const cards = group.querySelectorAll('.stub');
+      let groupMatches = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const typeOk = (type === 'all') || (type === groupType);
+        const destOk = !dest || text.includes(dest.toLowerCase());
+        const keywordOk = !keyword || text.includes(keyword);
+        const match = typeOk && destOk && keywordOk;
+        card.classList.toggle('no-match', !match);
+        if (match) groupMatches++;
+      });
+
+      totalMatches += groupMatches;
+      const emptyEl = document.querySelector(`[data-empty-for="${groupType}"]`);
+      if (emptyEl){
+        const groupVisible = (type === 'all' || type === groupType);
+        emptyEl.classList.toggle('show', groupVisible && groupMatches === 0);
+      }
+    });
+
+    if (!type || type === 'all'){
+      if (!dest && !keyword){
+        statusEl.textContent = '';
+      } else {
+        statusEl.textContent = `تم العثور على ${totalMatches} فرصة مطابقة.`;
+      }
+    } else {
+      statusEl.textContent = `تم العثور على ${totalMatches} فرصة مطابقة.`;
+    }
+
+    if (totalMatches > 0 && (dest || keyword || type !== 'all')){
+      const firstVisible = document.querySelector('.stub:not(.no-match)');
+      if (firstVisible) firstVisible.closest('section').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    runSearch();
+  });
+
+  document.querySelectorAll('.search-tags span').forEach(tag => {
+    tag.addEventListener('click', () => {
+      keywordInput.value = tag.dataset.tag || tag.textContent.trim();
+      typeSelect.value = 'all';
+      runSearch();
+    });
+  });
+
+  /* ---------- Newsletter (client-side confirmation, no backend) ---------- */
+  const newsletterForm = document.getElementById('newsletterForm');
+  const newsletterNote = document.getElementById('newsletterNote');
+  const newsletterEmail = document.getElementById('newsletter-email');
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = newsletterEmail.value.trim();
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!isValid){
+      newsletterNote.textContent = 'من فضلك أدخل بريدًا إلكترونيًا صحيحًا.';
+      newsletterNote.style.color = '#ffb4a2';
+      return;
+    }
+    newsletterNote.textContent = '✓ تم الاشتراك بنجاح! تحقق من بريدك للتأكيد.';
+    newsletterNote.style.color = 'var(--gold)';
+    newsletterForm.reset();
+  });
+
+  /* ---------- Mobile CTA bar on hero exit ---------- */
   const ctaBar = document.getElementById('mobileCtaBar');
   const heroEl = document.getElementById('hero');
   if ('IntersectionObserver' in window && heroEl) {
@@ -551,29 +670,33 @@
     }, { threshold: 0 });
     io.observe(heroEl);
   }
+
+  /* ---------- Back to top ---------- */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('show', window.scrollY > 500);
+  }, { passive:true });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+
+  /* ---------- Scroll reveal animations ---------- */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)){
+    revealEls.forEach(el => el.classList.add('in-view'));
+  } else {
+    const revealIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          revealIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold:.12 });
+    revealEls.forEach(el => revealIO.observe(el));
+  }
+})();
 </script>
-  <footer style="background:#0B2A4A;color:#fff;padding:40px 20px;margin-top:60px;text-align:center">
-
-<h3>Forsah</h3>
-
-<p>منصة عربية لنشر المنح الدراسية والوظائف والهجرة والتأشيرات.</p>
-
-<p>
-
-<a href="about.html" style="color:white">من نحن</a> |
-
-<a href="contact.html" style="color:white">اتصل بنا</a> |
-
-<a href="privacy-policy.html" style="color:white">سياسة الخصوصية</a> |
-
-<a href="terms.html" style="color:white">الشروط والأحكام</a> |
-
-<a href="disclaimer.html" style="color:white">إخلاء المسؤولية</a>
-
-</p>
-
-<p>© 2026 Forsah. جميع الحقوق محفوظة.</p>
-
-  </footer>
 </body>
 </html>
