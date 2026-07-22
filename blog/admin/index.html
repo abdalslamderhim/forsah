@@ -1,95 +1,159 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Forsah CMS | تسجيل الدخول</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/admin.css">
-
-<link rel="icon" href="../favicon.ico">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>تسجيل الدخول — Forsah CMS</title>
+<link rel="stylesheet" href="css/admin.css" />
+<style>
+  .login-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .login-card {
+    width: 100%;
+    max-width: 440px;
+  }
+  .login-head {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .login-head .stamp {
+    width: 64px;
+    height: 64px;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  .login-head h1 {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  .login-head p {
+    color: var(--paper-dim);
+    font-size: 13px;
+    margin: 0;
+  }
+  details {
+    margin-top: 18px;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  summary {
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--gold-soft);
+  }
+  details ol {
+    font-size: 13px;
+    color: var(--paper-dim);
+    line-height: 1.9;
+    padding-inline-start: 20px;
+    margin: 10px 0 0;
+  }
+  details code {
+    font-family: var(--font-mono);
+    background: var(--ink);
+    padding: 1px 6px;
+    border-radius: 4px;
+    direction: ltr;
+    display: inline-block;
+  }
+</style>
 </head>
-
 <body>
+  <div class="login-wrap">
+    <div class="login-card panel">
+      <div class="login-head">
+        <div class="stamp">فرصة</div>
+        <h1>Forsah CMS</h1>
+        <p>الدخول عبر GitHub — بدون قاعدة بيانات، بدون خادم</p>
+      </div>
 
-<div class="login-page">
+      <form id="loginForm">
+        <div class="field">
+          <label for="owner">اسم مالك المستودع (Owner)</label>
+          <input type="text" id="owner" value="abdalslamderhim" required autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="repo">اسم المستودع (Repo)</label>
+          <input type="text" id="repo" value="forsah" required autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="branch">الفرع (Branch)</label>
+          <input type="text" id="branch" value="main" required autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="token">GitHub Personal Access Token</label>
+          <input type="password" id="token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" required autocomplete="off" />
+          <p class="help">
+            يُحفظ في متصفحك فقط لمدة هذه الجلسة (يُمسح عند إغلاق التبويب)، ولا يُرسل لأي مكان سوى GitHub مباشرة.
+          </p>
+        </div>
+        <button type="submit" class="btn btn-gold" id="submitBtn" style="width:100%">
+          دخول
+        </button>
+      </form>
 
-<div class="login-box">
+      <details>
+        <summary>كيف أنشئ Token؟ (مرة واحدة فقط)</summary>
+        <ol>
+          <li>افتح <code>github.com/settings/tokens?type=beta</code></li>
+          <li>اضغط "Generate new token" → اختر مستودع forsah فقط تحت Repository access</li>
+          <li>فعّل صلاحية <code>Contents: Read and write</code></li>
+          <li>انسخ التوكن (يظهر مرة واحدة فقط) والصقه أعلاه</li>
+        </ol>
+      </details>
+    </div>
+  </div>
 
-<div class="logo">
+  <div class="toast" id="toast"></div>
 
-<div class="logo-icon">
+  <script src="js/github-api.js"></script>
+  <script>
+    const form = document.getElementById("loginForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const toast = document.getElementById("toast");
 
-ف
+    function showToast(msg, isError) {
+      toast.textContent = msg;
+      toast.className = "toast show" + (isError ? " error" : "");
+      setTimeout(() => (toast.className = "toast"), 3500);
+    }
 
-</div>
+    // إن كانت هناك جلسة صالحة بالفعل، انتقل مباشرة للوحة التحكم
+    if (ForsahGitHub.isLoggedIn()) {
+      window.location.href = "editor.html";
+    }
 
-<h1>FORSAH CMS</h1>
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "جارٍ التحقق...";
 
-<p>
+      const owner = document.getElementById("owner").value.trim();
+      const repo = document.getElementById("repo").value.trim();
+      const branch = document.getElementById("branch").value.trim() || "main";
+      const token = document.getElementById("token").value.trim();
 
-لوحة إدارة موقع فرصة
-
-</p>
-
-</div>
-
-<form id="loginForm">
-
-<div class="form-group">
-
-<label>
-
-اسم المستخدم
-
-</label>
-
-<input
-type="text"
-id="username"
-placeholder="أدخل اسم المستخدم"
-required>
-
-</div>
-
-<div class="form-group">
-
-<label>
-
-كلمة المرور
-
-</label>
-
-<input
-type="password"
-id="password"
-placeholder="أدخل كلمة المرور"
-required>
-
-</div>
-
-<button type="submit" class="login-btn">
-
-تسجيل الدخول
-
-</button>
-
-</form>
-
-<p id="message"></p>
-
-</div>
-
-</div>
-
-<script src="js/app.js"></script>
-
+      try {
+        const { user, repoInfo } = await ForsahGitHub.verifyAccess({ token, owner, repo, branch });
+        showToast(`مرحبًا ${user.login} — تم الاتصال بـ ${repoInfo.full_name}`);
+        setTimeout(() => (window.location.href = "editor.html"), 700);
+      } catch (err) {
+        ForsahGitHub.clearConfig();
+        let msg = "فشل تسجيل الدخول — تحقق من التوكن والصلاحيات";
+        if (err.message === "UNAUTHORIZED") msg = "التوكن غير صالح أو منتهي";
+        if (err.message === "NOT_FOUND" || err.status === 404) msg = "لم يتم العثور على المستودع — تحقق من الاسم والصلاحيات";
+        showToast(msg, true);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "دخول";
+      }
+    });
+  </script>
 </body>
-
 </html>
