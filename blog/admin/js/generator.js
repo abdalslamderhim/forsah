@@ -17,32 +17,7 @@ function generateHTML() {
 
     let html = `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"${title}",
-  "description":"${description}",
-  "image":"${image}",
-  "author":{
-    "@type":"Person",
-    "name":"${author}"
-  },
-  "publisher":{
-    "@type":"Organization",
-    "name":"Forsah",
-    "logo":{
-      "@type":"ImageObject",
-      "url":"https://abdalslamderhim.github.io/forsah/logo.png"
-    }
-  },
-  "datePublished":"${today}",
-  "dateModified":"${today}",
-  "mainEntityOfPage":{
-    "@type":"WebPage",
-    "@id":"${url}"
-  }
-}
+
 </script>
 <head>
 
@@ -71,6 +46,33 @@ function generateHTML() {
 <meta name="twitter:description" content="${description}">
 <meta name="twitter:image" content="${image}">
 
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"${title}",
+  "description":"${description}",
+  "image":"${image}",
+  "author":{
+    "@type":"Person",
+    "name":"${author}"
+  },
+  "publisher":{
+    "@type":"Organization",
+    "name":"Forsah",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"https://abdalslamderhim.github.io/forsah/logo.png"
+    }
+  },
+  "datePublished":"${today}",
+  "dateModified":"${today}",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"${url}"
+  }
+}
+</script>
 </head>
 
 <body>
