@@ -1,130 +1,245 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Cairo',sans-serif;
+/* ============================================================
+   Forsah CMS — نظام التصميم
+   الفكرة: هوية "ختم الفرصة" — كل مقال يُختم عند نشره كما يُختم
+   جواز السفر عند منح التأشيرة. الذهبي = الفرصة المتاحة/المنشورة.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --ink: #0b1220;
+  --ink-2: #121b2e;
+  --ink-3: #1a2540;
+  --line: rgba(233, 230, 220, 0.1);
+  --paper: #e9e6dc;
+  --paper-dim: #a7a99f;
+  --gold: #c9a227;
+  --gold-soft: #e4c765;
+  --teal: #2fa89a;
+  --red: #c1443c;
+
+  --font-display: "Tajawal", sans-serif;
+  --font-body: "IBM Plex Sans Arabic", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --radius: 10px;
 }
 
-body{
-background:linear-gradient(135deg,#0B2A4A,#123A63);
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+* {
+  box-sizing: border-box;
 }
 
-.login-page{
-width:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  direction: rtl;
 }
 
-.login-box{
-width:420px;
-background:#fff;
-padding:40px;
-border-radius:18px;
-box-shadow:0 20px 50px rgba(0,0,0,.25);
-text-align:center;
-animation:fade .5s ease;
+body {
+  min-height: 100vh;
 }
 
-.logo{
-margin-bottom:30px;
+::selection {
+  background: var(--gold);
+  color: var(--ink);
 }
 
-.logo-icon{
-width:80px;
-height:80px;
-margin:auto;
-border-radius:18px;
-background:#D4AF37;
-color:#0B2A4A;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:46px;
-font-weight:900;
-margin-bottom:15px;
+a {
+  color: var(--gold-soft);
 }
 
-.logo h1{
-font-size:30px;
-color:#0B2A4A;
-margin-bottom:6px;
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.2px;
 }
 
-.logo p{
-color:#777;
-font-size:15px;
+.mono {
+  font-family: var(--font-mono);
+  direction: ltr;
+  unicode-bidi: plaintext;
 }
 
-.form-group{
-text-align:right;
-margin-bottom:18px;
+/* -------- الختم: العنصر المميز المتكرر في كل الواجهة -------- */
+.stamp {
+  --stamp-color: var(--gold);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px dashed var(--stamp-color);
+  color: var(--stamp-color);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 13px;
+  transform: rotate(-8deg);
+  flex-shrink: 0;
+}
+.stamp.stamp-sm {
+  width: 26px;
+  height: 26px;
+  font-size: 9px;
+  border-width: 1.5px;
+}
+.stamp.stamp-draft {
+  --stamp-color: var(--paper-dim);
+}
+.stamp.stamp-published {
+  --stamp-color: var(--teal);
 }
 
-.form-group label{
-display:block;
-margin-bottom:8px;
-font-weight:700;
-color:#0B2A4A;
+/* -------- الحاويات العامة -------- */
+.shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 24px 80px;
 }
 
-.form-group input{
-width:100%;
-padding:14px;
-border:1px solid #ddd;
-border-radius:10px;
-font-size:16px;
-transition:.3s;
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--ink-2), var(--ink));
 }
 
-.form-group input:focus{
-outline:none;
-border-color:#D4AF37;
-box-shadow:0 0 8px rgba(212,175,55,.3);
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand h1 {
+  font-size: 20px;
+}
+.brand span.sub {
+  display: block;
+  font-size: 11px;
+  color: var(--paper-dim);
+  font-weight: 500;
+  font-family: var(--font-body);
+  margin-top: 2px;
 }
 
-.login-btn{
-width:100%;
-padding:15px;
-border:none;
-border-radius:10px;
-background:#0B2A4A;
-color:#fff;
-font-size:17px;
-font-weight:700;
-cursor:pointer;
-transition:.3s;
+.panel {
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
 }
 
-.login-btn:hover{
-background:#D4AF37;
-color:#111;
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--ink);
+}
+.btn-gold:hover {
+  background: var(--gold-soft);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--paper);
+  border-color: var(--line);
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-soft);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-#message{
-margin-top:18px;
-font-weight:bold;
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--paper-dim);
+  margin-bottom: 6px;
+  font-weight: 500;
 }
 
-@keyframes fade{
-
-from{
-
-opacity:0;
-transform:translateY(20px);
-
+input[type="text"],
+input[type="password"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  color: var(--paper);
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--gold);
 }
 
-to{
-
-opacity:1;
-transform:translateY(0);
-
+.field {
+  margin-bottom: 16px;
 }
 
-  }
+.help {
+  font-size: 12px;
+  color: var(--paper-dim);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink-3);
+  border: 1px solid var(--gold);
+  color: var(--paper);
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.toast.show {
+  opacity: 1;
+}
+.toast.error {
+  border-color: var(--red);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
