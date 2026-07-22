@@ -243,3 +243,170 @@ textarea:focus {
   border-radius: 20px;
   border: 1px solid var(--line);
 }
+
+/* -------- التنقل العلوي -------- */
+.navlinks {
+  display: flex;
+  gap: 4px;
+}
+.navlinks a {
+  color: var(--paper-dim);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 7px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.navlinks a:hover {
+  background: var(--ink-3);
+  color: var(--paper);
+}
+.navlinks a.active {
+  background: var(--ink-3);
+  color: var(--gold-soft);
+}
+
+/* -------- بطاقات الإحصائيات -------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.stat-card {
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.stat-card .num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--gold-soft);
+  line-height: 1.2;
+}
+.stat-card .lbl {
+  font-size: 12.5px;
+  color: var(--paper-dim);
+  margin-top: 4px;
+}
+
+.section-title {
+  font-size: 15px;
+  margin: 26px 0 14px;
+  color: var(--paper);
+}
+
+/* -------- الجداول -------- */
+.table-wrap {
+  overflow-x: auto;
+}
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+table.data th {
+  text-align: right;
+  color: var(--paper-dim);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+table.data td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+table.data tr:last-child td {
+  border-bottom: none;
+}
+table.data .title-cell {
+  font-weight: 600;
+}
+table.data .row-actions {
+  display: flex;
+  gap: 6px;
+}
+table.data .row-actions .btn {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+.btn-danger {
+  background: transparent;
+  color: var(--red);
+  border: 1px solid rgba(193, 68, 60, 0.5);
+}
+.btn-danger:hover {
+  background: rgba(193, 68, 60, 0.12);
+}
+
+/* -------- شريط الفلاتر -------- */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.filters input,
+.filters select {
+  width: auto;
+}
+.filters input[type="text"] {
+  flex: 1;
+  min-width: 180px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--paper-dim);
+}
+.empty-state .stamp {
+  margin: 0 auto 16px;
+}
+
+.recent-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.recent-row:last-child {
+  border-bottom: none;
+}
+.recent-info {
+  flex: 1;
+  min-width: 0;
+}
+.recent-title {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.recent-meta {
+  font-size: 12px;
+  color: var(--paper-dim);
+  margin-top: 2px;
+}
+.soon-tag {
+  font-size: 10px;
+  color: var(--paper-dim);
+  border: 1px solid var(--line);
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin-right: 6px;
+}
+
+.spinner-row {
+  text-align: center;
+  padding: 30px;
+  color: var(--paper-dim);
+  font-size: 13px;
+}
