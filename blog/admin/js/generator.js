@@ -20,7 +20,32 @@ function generateHTML() {
 
 </script>
 <head>
-
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"الرئيسية",
+      "item":"https://abdalslamderhim.github.io/forsah/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"المدونة",
+      "item":"https://abdalslamderhim.github.io/forsah/blog/"
+    },
+    {
+      "@type":"ListItem",
+      "position":3,
+      "name":"${title}",
+      "item":"${url}"
+    }
+  ]
+}
+</script>
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
