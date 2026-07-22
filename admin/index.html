@@ -126,7 +126,7 @@
 
     // إن كانت هناك جلسة صالحة بالفعل، انتقل مباشرة للوحة التحكم
     if (ForsahGitHub.isLoggedIn()) {
-      window.location.href = "editor.html";
+      window.location.href = "dashboard.html";
     }
 
     form.addEventListener("submit", async (e) => {
@@ -142,7 +142,7 @@
       try {
         const { user, repoInfo } = await ForsahGitHub.verifyAccess({ token, owner, repo, branch });
         showToast(`مرحبًا ${user.login} — تم الاتصال بـ ${repoInfo.full_name}`);
-        setTimeout(() => (window.location.href = "editor.html"), 700);
+        setTimeout(() => (window.location.href = "dashboard.html"), 700);
       } catch (err) {
         ForsahGitHub.clearConfig();
         let msg = "فشل تسجيل الدخول — تحقق من التوكن والصلاحيات";
