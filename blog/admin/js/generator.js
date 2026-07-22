@@ -45,6 +45,19 @@ function generateHTML() {
     }
   ]
 }
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Forsah",
+  "url":"https://abdalslamderhim.github.io/forsah/",
+  "logo":"https://abdalslamderhim.github.io/forsah/logo.png",
+  "description":"منصة فرصة للمنح الدراسية والهجرة والوظائف والتأشيرات.",
+  "sameAs":[
+    "https://https://www.facebook.com/profile.php?id=61592495570244"
+  ]
+}
+</script>
 </script>
 <meta charset="UTF-8">
 
@@ -58,7 +71,7 @@ function generateHTML() {
 
 <meta name="author" content="${author}">
 
-<link rel="canonical" href="${url}">
+<link rel="canonical" href="${url}"> 
 
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
