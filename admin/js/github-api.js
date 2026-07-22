@@ -150,6 +150,20 @@ const ForsahGitHub = (() => {
     }
   }
 
+  /** يرجع تاريخ آخر تعديل (commit) لمسار ملف معيّن، أو null إن تعذّر */
+  async function getLastCommitDate(filePath) {
+    const cfg = getConfig();
+    try {
+      const commits = await request(
+        `/repos/${cfg.owner}/${cfg.repo}/commits?path=${encodeURI(filePath)}&per_page=1`
+      );
+      if (commits && commits.length) return commits[0].commit.author.date;
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
+
   /** حذف ملف */
   async function deleteFile(filePath, commitMessage) {
     const cfg = getConfig();
@@ -179,5 +193,6 @@ const ForsahGitHub = (() => {
     putBinaryFile,
     listDir,
     deleteFile,
+    getLastCommitDate,
   };
 })();
