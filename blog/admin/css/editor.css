@@ -1,0 +1,123 @@
+.editor-page{
+    padding:30px;
+    background:#f4f7fb;
+    min-height:100vh;
+}
+
+.editor-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.editor-header h1{
+    color:#0B2A4A;
+    font-size:30px;
+}
+
+.back-btn{
+    background:#0B2A4A;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#D4AF37;
+    color:#111;
+}
+
+.editor-grid{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:25px;
+}
+
+.editor-form,
+.editor-content{
+    background:#fff;
+    border-radius:14px;
+    padding:22px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.editor-form label,
+.editor-content label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:700;
+    color:#0B2A4A;
+}
+
+.editor-form input,
+.editor-form textarea,
+.editor-form select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+#toolbar{
+    border:1px solid #ddd;
+    border-radius:8px 8px 0 0;
+}
+
+#editor{
+    background:#fff;
+    border:1px solid #ddd;
+    border-top:none;
+    border-radius:0 0 8px 8px;
+}
+
+.editor-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+}
+
+.editor-buttons button{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+    font-size:15px;
+    transition:.3s;
+}
+
+#previewBtn{
+    background:#0B2A4A;
+    color:#fff;
+}
+
+#generateBtn{
+    background:#D4AF37;
+    color:#111;
+}
+
+#downloadBtn{
+    background:#28a745;
+    color:#fff;
+}
+
+.editor-buttons button:hover{
+    opacity:.9;
+    transform:translateY(-2px);
+}
+
+@media(max-width:992px){
+
+.editor-grid{
+
+grid-template-columns:1fr;
+
+}
+
+  }
