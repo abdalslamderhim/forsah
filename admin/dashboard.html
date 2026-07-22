@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>لوحة التحكم — Forsah CMS</title>
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="stamp stamp-sm">ف</div>
+      <div>
+        <h1>Forsah CMS</h1>
+        <span class="sub mono" id="repoLabel">—</span>
+      </div>
+    </div>
+    <nav class="navlinks">
+      <a href="dashboard.html" class="active">لوحة التحكم</a>
+      <a href="articles.html">المقالات</a>
+      <a href="editor.html">مقال جديد</a>
+    </nav>
+    <button class="btn btn-ghost" id="logoutBtn">تسجيل الخروج</button>
+  </div>
+
+  <div class="shell">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="num" id="statTotal">—</div>
+        <div class="lbl">إجمالي المقالات المنشورة</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" id="statDrafts">—</div>
+        <div class="lbl">مسودات قيد الكتابة</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" id="statCategories">—</div>
+        <div class="lbl">أقسام نشطة</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" id="statWeek">—</div>
+        <div class="lbl">نُشر هذا الأسبوع</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" style="font-size:16px;color:var(--paper-dim)">—</div>
+        <div class="lbl"><span class="soon-tag">قريبًا</span>عدد الزوار (Google Analytics)</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">آخر المقالات</h2>
+    <div class="panel" id="recentList">
+      <div class="spinner-row">جارٍ التحميل...</div>
+    </div>
+
+    <div style="margin-top:22px;display:flex;gap:10px">
+      <a href="editor.html" class="btn btn-gold">+ مقال جديد</a>
+      <a href="articles.html" class="btn btn-ghost">عرض كل المقالات</a>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/github-api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
