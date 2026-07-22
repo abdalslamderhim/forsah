@@ -1,23 +1,21 @@
 {
-  "name": "Forsah",
-  "short_name": "Forsah",
-  "description": "منصة فرصة للمنح الدراسية والهجرة والوظائف والتأشيرات",
+  "name": "فرصة - FORSAH",
+  "short_name": "FORSAH",
+  "description": "بوابتك العربية للمنح الدراسية والهجرة والوظائف والتأشيرات.",
   "start_url": "/forsah/",
   "scope": "/forsah/",
   "display": "standalone",
-  "background_color": "#F2F5F7",
+  "background_color": "#0B2A4A",
   "theme_color": "#0B2A4A",
-  "orientation": "portrait",
-  "lang": "ar",
-  "dir": "rtl",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "/forsah/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "logo.png",
+      "src": "/forsah/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
