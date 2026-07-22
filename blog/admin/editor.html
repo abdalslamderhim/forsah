@@ -1,1 +1,105 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forsah CMS - محرر المقالات</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet"><link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"><link rel="stylesheet" href="css/editor.css"></head><body><div class="editor-page"><div class="editor-header"><h1>✍️ إنشاء مقال جديد</h1><a class="back-btn" href="dashboard.html">العودة</a></div><div class="editor-grid"><div class="editor-form"><label>عنوان المقال</label><input id="title"><label>Slug</label><input id="slug"><label>رابط الصورة</label><input id="image"><label>الوصف التعريفي</label><textarea id="metaDescription"></textarea><label>الكلمات المفتاحية</label><input id="keywords"><label>الكاتب</label><input id="author" value="Forsah"></div><div class="editor-content"><div id="toolbar"></div><div id="editor" style="height:350px;"></div><h3>الأسئلة الشائعة</h3><div id="faq-container"><div class="faq-item"><label>السؤال</label><input class="faq-question"><label>الإجابة</label><textarea class="faq-answer"></textarea></div></div><button id="addFaqBtn" type="button">➕ إضافة سؤال</button><div class="editor-buttons"><button id="previewBtn">👁 معاينة</button><button id="generateBtn">📄 إنشاء HTML</button><button id="downloadBtn">⬇ تنزيل</button></div></div></div></div><script src="https://cdn.quilljs.com/1.3.6/quill.js"></script><script src="js/editor.js"></script><script src="js/generator.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>محرر المقالات — Forsah CMS</title>
+<link rel="stylesheet" href="css/admin.css" />
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+<style>
+  .editor-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .editor-grid { grid-template-columns: 1fr; }
+  }
+  .meta-panel h3 { font-size: 15px; margin-bottom: 16px; }
+  .slug-row { display: flex; gap: 8px; }
+  .slug-row input { flex: 1; }
+  .slug-row .btn { padding: 11px 14px; font-size: 12px; white-space: nowrap; }
+  #quillEditor { min-height: 420px; background: var(--paper); color: #1a1a1a; border-radius: 0 0 8px 8px; }
+  .ql-toolbar { border-radius: 8px 8px 0 0 !important; background: var(--ink-3); }
+  .ql-snow .ql-stroke { stroke: var(--paper); }
+  .ql-snow .ql-picker { color: var(--paper); }
+  .actions-row { display: flex; gap: 10px; margin-top: 18px; }
+  .status-row { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .status-row span.label { font-size: 13px; color: var(--paper-dim); }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="stamp stamp-sm">ف</div>
+      <div>
+        <h1>محرر المقالات</h1>
+        <span class="sub mono" id="repoLabel">—</span>
+      </div>
+    </div>
+    <button class="btn btn-ghost" id="logoutBtn">تسجيل الخروج</button>
+  </div>
+
+  <div class="shell">
+    <div class="editor-grid">
+      <!-- عمود البيانات الوصفية -->
+      <div class="panel meta-panel">
+        <div class="status-row">
+          <div class="stamp stamp-sm stamp-draft" id="statusStamp">مسودة</div>
+          <span class="label">حالة المقال الحالية</span>
+        </div>
+
+        <div class="field">
+          <label for="f-title">عنوان المقال</label>
+          <input type="text" id="f-title" placeholder="مثال: منحة دراسية كاملة في ألمانيا 2026" />
+        </div>
+
+        <div class="field">
+          <label for="f-slug">الرابط (Slug)</label>
+          <div class="slug-row">
+            <input type="text" id="f-slug" class="mono" placeholder="germany-scholarship-2026" />
+            <button type="button" class="btn btn-ghost" id="genSlugBtn">توليد</button>
+          </div>
+          <p class="help">سيُنشر المقال على: <span class="mono">blog/&lt;slug&gt;.html</span></p>
+        </div>
+
+        <div class="field">
+          <label for="f-category">القسم</label>
+          <select id="f-category">
+            <option value="scholarships">المنح الدراسية</option>
+            <option value="jobs">الوظائف</option>
+            <option value="immigration">الهجرة</option>
+            <option value="visas">التأشيرات</option>
+            <option value="courses">الكورسات</option>
+            <option value="news">الأخبار</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-meta">وصف Meta (لمحركات البحث)</label>
+          <textarea id="f-meta" rows="3" placeholder="وصف مختصر يظهر في نتائج جوجل (حتى 160 حرفًا)"></textarea>
+        </div>
+
+        <div class="actions-row" style="flex-direction:column">
+          <button class="btn btn-ghost" id="saveDraftBtn" style="width:100%">حفظ كمسودة</button>
+          <button class="btn btn-gold" id="publishBtn" style="width:100%">نشر المقال</button>
+        </div>
+        <p class="help">يُحفظ تلقائيًا كمسودة كل بضع ثوانٍ أثناء الكتابة.</p>
+      </div>
+
+      <!-- عمود المحرر -->
+      <div class="panel">
+        <div id="quillEditor"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+  <script src="js/github-api.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>
