@@ -15,7 +15,49 @@ const CATEGORIES = {
 
 let quill;
 let currentDraftPath = null; // admin/drafts/xxx.json إن كنا نعدّل مسودة موجودة
+let currentPublishedPath = null; // blog/xxx.html إن كنا نعدّل مقالًا منشورًا مسبقًا
 let autosaveTimer = null;
+
+/** يستخرج بيانات المقال من صفحة HTML منشورة سابقًا (للتعديل) */
+function parsePublishedHTML(rawHTML) {
+  const doc = new DOMParser().parseFromString(rawHTML, "text/html");
+  const titleFull = doc.querySelector("title")?.textContent || "";
+  const title = titleFull.replace(/\s*\|\s*Forsah\s*$/, "");
+  const metaDescription = doc.querySelector('meta[name="description"]')?.getAttribute("content") || "";
+  const article = doc.querySelector("article.post");
+  const category = article?.getAttribute("data-category") || "scholarships";
+  const bodyHTML = doc.querySelector(".post-body")?.innerHTML.trim() || "";
+  return { title, metaDescription, category, bodyHTML };
+}
+
+async function loadFromQueryString() {
+  const params = new URLSearchParams(window.location.search);
+  const filePath = params.get("file");
+  if (!filePath) return;
+
+  try {
+    const fileData = await ForsahGitHub.getFile(filePath);
+    if (!fileData) {
+      showToast("تعذّر العثور على المقال المطلوب", true);
+      return;
+    }
+    const data = parsePublishedHTML(fileData.content);
+    const slug = filePath.replace(/^blog\//, "").replace(/\.html$/, "");
+    fillForm({ ...data, slug });
+    currentPublishedPath = filePath;
+
+    // منع تغيير الرابط عند تعديل مقال منشور مسبقًا لتفادي ملفات يتيمة مكرّرة
+    const slugInput = document.getElementById("f-slug");
+    slugInput.disabled = true;
+    document.getElementById("genSlugBtn").disabled = true;
+    slugInput.title = "لا يمكن تغيير الرابط عند تعديل مقال منشور مسبقًا";
+
+    setStatusStamp("published");
+    document.getElementById("publishBtn").textContent = "حفظ التعديلات";
+  } catch (e) {
+    showToast("فشل تحميل المقال للتعديل", true);
+  }
+}
 
 function slugify(text) {
   const hasLatin = /[a-zA-Z]/.test(text);
@@ -95,6 +137,7 @@ ${data.bodyHTML}
 }
 
 async function saveDraft(showMsg = true) {
+  if (currentPublishedPath) return; // نعدّل مقالًا منشورًا: لا داعي لمسودة منفصلة
   const data = gatherFormData();
   if (!data.title) return;
   if (!data.slug) data.slug = slugify(data.title);
@@ -126,13 +169,15 @@ async function publishArticle() {
   publishBtn.textContent = "جارٍ النشر...";
   try {
     const html = buildArticleHTML(data);
+    const targetPath = currentPublishedPath || `blog/${data.slug}.html`;
     await ForsahGitHub.putFile(
-      `blog/${data.slug}.html`,
+      targetPath,
       html,
-      `نشر: ${data.title}`
+      currentPublishedPath ? `تحديث: ${data.title}` : `نشر: ${data.title}`
     );
+    currentPublishedPath = targetPath;
     setStatusStamp("published");
-    showToast(`تم النشر: blog/${data.slug}.html`);
+    showToast(`تم الحفظ: ${targetPath}`);
   } catch (err) {
     showToast("فشل النشر — تحقق من الاتصال والصلاحيات", true);
   } finally {
@@ -185,5 +230,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index.html";
   });
 
-  setStatusStamp("draft");
+  loadFromQueryString().then(() => {
+    if (!currentPublishedPath) setStatusStamp("draft");
+  });
 });
+
