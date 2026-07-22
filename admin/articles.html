@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>المقالات — Forsah CMS</title>
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="stamp stamp-sm">ف</div>
+      <div>
+        <h1>Forsah CMS</h1>
+        <span class="sub mono" id="repoLabel">—</span>
+      </div>
+    </div>
+    <nav class="navlinks">
+      <a href="dashboard.html">لوحة التحكم</a>
+      <a href="articles.html" class="active">المقالات</a>
+      <a href="editor.html">مقال جديد</a>
+    </nav>
+    <button class="btn btn-ghost" id="logoutBtn">تسجيل الخروج</button>
+  </div>
+
+  <div class="shell">
+    <h2 style="margin-bottom:18px">المقالات المنشورة</h2>
+
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="بحث بالعنوان أو الرابط..." />
+      <select id="categoryFilter">
+        <option value="">كل الأقسام</option>
+        <option value="scholarships">المنح الدراسية</option>
+        <option value="jobs">الوظائف</option>
+        <option value="immigration">الهجرة</option>
+        <option value="visas">التأشيرات</option>
+        <option value="courses">الكورسات</option>
+        <option value="news">الأخبار</option>
+      </select>
+      <select id="sortSelect">
+        <option value="newest">الأحدث أولاً</option>
+        <option value="oldest">الأقدم أولاً</option>
+        <option value="alpha">أبجديًا</option>
+      </select>
+    </div>
+
+    <div class="panel" id="tableSection" style="display:none">
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>العنوان</th>
+              <th>القسم</th>
+              <th>الرابط</th>
+              <th>آخر تعديل</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="articlesBody">
+            <tr><td colspan="5" class="spinner-row">جارٍ التحميل...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel empty-state" id="emptyState" style="display:none">
+      <div class="stamp stamp-draft">فرصة</div>
+      <h3 style="margin-bottom:8px">لا توجد مقالات منشورة بعد</h3>
+      <p>ابدأ بإنشاء أول مقال من لوحة التحكم.</p>
+      <div style="margin-top:16px">
+        <a href="editor.html" class="btn btn-gold">إنشاء مقال جديد</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/github-api.js"></script>
+  <script src="js/articles.js"></script>
+</body>
+</html>
